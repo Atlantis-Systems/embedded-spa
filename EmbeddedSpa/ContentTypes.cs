@@ -5,6 +5,8 @@ public static class ContentTypes
     public static string Get(string path)
     {
         if (path.EndsWith(".wasm")) return "application/wasm";
+        if (path.EndsWith(".wasm.br")) return "application/wasm";
+        if (path.EndsWith(".wasm.gz")) return "application/wasm";
         if (path.EndsWith(".css.br")) return "text/css";
         if (path.EndsWith(".css.gz")) return "text/css";
         if (path.EndsWith(".html")) return "text/html";
