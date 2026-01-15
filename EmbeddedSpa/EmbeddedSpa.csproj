@@ -8,4 +8,13 @@
     <IsPackable>true</IsPackable>
   </PropertyGroup>
 
+  <!-- Automatically embed all files from wwwroot -->
+  <Target Name="EmbedWwwroot" BeforeTargets="BeforeBuild">
+    <ItemGroup>
+      <EmbeddedResource Include="wwwroot/**/*" Condition="Exists('wwwroot')">
+        <LogicalName>wwwroot.%(RecursiveDir)%(Filename)%(Extension)</LogicalName>
+      </EmbeddedResource>
+    </ItemGroup>
+  </Target>
+
 </Project>
